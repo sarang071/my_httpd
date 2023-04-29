@@ -1,3 +1,7 @@
-FROM httpd
-WORKDIR /var/www/html
-RUN echo "Hi this is Sarang" >index.html
+FROM nginx
+ 
+RUN apt-get update && apt-get upgrade -y
+ 
+COPY index.html /usr/share/nginx/html
+ 
+EXPOSE 8383
